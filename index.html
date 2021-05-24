@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mobile Scoreboard</title>
+        <link rel="stylesheet" href="./scoreboard.css" />
+    </head>
+    <body>
+        <div id="scoreboard" class="scoreboard">
+            <div class="display">
+                <h2 class="display__heading display__heading--home">home</h2>
+                <div
+                    class="display__number display__number--home"
+                    data-bind-type="text"
+                    data-bind="home"
+                ></div>
+                <h2 class="display__heading display__heading--inning">
+                    inning
+                </h2>
+                <div
+                    class="display__number display__number--inning"
+                    data-bind-type="text"
+                    data-bind="inning"
+                ></div>
+                <h2 class="display__heading display__heading--guest">guest</h2>
+                <div
+                    class="display__number display__number--guest"
+                    data-bind-type="text"
+                    data-bind="guest"
+                ></div>
+                <h3
+                    class="display__heading display__heading--small display__heading--ball"
+                >
+                    ball
+                </h3>
+                <div class="dot-display" data-bind-type="dot" data-bind="ball">
+                    <input type="checkbox" class="dot" id="ball-1" /><label
+                        for="ball-1"
+                    ></label>
+                    <input type="checkbox" class="dot" id="ball-2" /><label
+                        for="ball-2"
+                    ></label>
+                    <input type="checkbox" class="dot" id="ball-3" /><label
+                        for="ball-3"
+                    ></label>
+                </div>
+                <h3
+                    class="display__heading display__heading--small display__heading--strike"
+                >
+                    STRIKE
+                </h3>
+                <div
+                    class="dot-display"
+                    data-bind-type="dot"
+                    data-bind="strike"
+                >
+                    <input type="checkbox" class="dot" id="strike-1" /><label
+                        for="strike-1"
+                    ></label>
+                    <input type="checkbox" class="dot" id="strike-2" /><label
+                        for="strike-2"
+                    ></label>
+                </div>
+                <h3
+                    class="display__heading display__heading--small display__heading--out"
+                >
+                    out
+                </h3>
+                <div class="dot-display" data-bind-type="dot" data-bind="out">
+                    <input type="checkbox" class="dot" id="out-1" /><label
+                        for="out-1"
+                    ></label>
+                    <input type="checkbox" class="dot" id="out-2" /><label
+                        for="out-2"
+                    ></label>
+                </div>
+            </div>
+            <div class="controls">
+                <button type="button" data-action="home">Home ^</button>
+                <button type="button" data-action="inning">Inning ^</button>
+                <button type="button" data-action="guest">Guest ^</button>
+                <button type="button" data-action="ball">Balls</button>
+                <button type="button" data-action="strike">Strikes</button>
+                <button type="button" data-action="out">Outs</button>
+                <button type="button" data-action="resetCount">
+                    New Batter
+                </button>
+                <br />
+                <button type="button" data-action="reset">New Game</button>
+                <button type="button" data-action="home" data-args="[-1]">
+                    Home -
+                </button>
+                <button type="button" data-action="guest" data-args="[-1]">
+                    Guest -
+                </button>
+            </div>
+        </div>
+        <script src="./scoreboard.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
